@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/lcdTv"
+            android:layout_weight="0.2"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            android:textAlignment="textEnd"
+            android:textSize="50sp"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+        <Button
+                android:id="@+id/seteBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:background="@drawable/background_button"
+                android:textColor="@android:color/white"
+                android:text="@string/sete" />
+
+        <Button
+                android:id="@+id/oitoBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/oito" />
+        <Button
+                android:id="@+id/noveBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/nove" />
+        <Button
+                android:id="@+id/adicaoBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/adicao" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+        <Button
+                android:id="@+id/quatroBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/quatro" />
+
+        <Button
+                android:id="@+id/cindoBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/cinco" />
+        <Button
+                android:id="@+id/seisBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/seis" />
+        <Button
+                android:id="@+id/subtracaoBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/subtracao" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+        <Button
+                android:id="@+id/umBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/um" />
+
+        <Button
+                android:id="@+id/doisBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/dois" />
+        <Button
+                android:id="@+id/tresBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/tres" />
+        <Button
+                android:id="@+id/multiplicacaoBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/multiplicacao" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+        <Button
+                android:id="@+id/zeroBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="@string/zero" />
+
+        <Button
+                android:id="@+id/pontoBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="." />
+        <Button
+                android:id="@+id/resultadoBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="=" />
+        <Button
+                android:id="@+id/divisaoBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:layout_margin="5dp"
+                android:text="/" />
+    </LinearLayout>
+
+</LinearLayout>
