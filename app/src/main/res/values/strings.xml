@@ -13,4 +13,7 @@
     <string name="dois">2</string>
     <string name="tres">3</string>
     <string name="multiplicacao">X</string>
+    <string name="ponto">.</string>
+    <string name="igual">=</string>
+    <string name="divisao">/</string>
 </resources>
