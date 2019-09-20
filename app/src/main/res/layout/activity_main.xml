@@ -3,168 +3,20 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".view.MainActivity">
+        tools:context=".view.MainActivity"
+        android:orientation="vertical">
 
-    <TextView
-            android:id="@+id/lcdTv"
+    <!-- Toolbar que substitui a SupportActionBar -->
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:hint="0"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd"
-            android:textSize="50sp" />
+            android:layout_height="?actionBarSize">
+        <include layout="@layout/toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <!--
-    <LinearLayout
+    <!-- Leiaute que será ocupado pelos Fragments -->
+    <FrameLayout
+            android:id="@+id/calculadoraFl"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal">
-
-        <Button
-                android:id="@+id/cBt"
-                style="@style/CalcButton"
-                android:text="@string/c"
-                android:textColor="@android:color/holo_orange_light" />
-
-        <Button
-                android:id="@+id/ceBt"
-                style="@style/CalcButton"
-                android:text="@string/ce"
-                android:textColor="@android:color/holo_orange_light" />
-
-        <Button
-                android:id="@+id/percentBt"
-                style="@style/CalcButton"
-                android:text="@string/percent"
-                android:textColor="@android:color/holo_orange_light" />
-
-        <Button
-                android:id="@+id/raizBt"
-                style="@style/CalcButton"
-                android:text="@string/raiz"
-                android:textColor="@android:color/holo_orange_light" />
-    </LinearLayout>
-
-    -->
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal">
-
-        <Button
-                android:id="@+id/seteBt"
-                style="@style/CalcButton"
-                android:text="@string/sete" />
-
-        <Button
-                android:id="@+id/oitoBt"
-                style="@style/CalcButton"
-                android:text="@string/oito" />
-
-        <Button
-                android:id="@+id/noveBt"
-                style="@style/CalcButton"
-                android:text="@string/nove" />
-
-        <Button
-                android:id="@+id/adicaoBt"
-                style="@style/CalcButton"
-                android:text="@string/adicao"
-                android:textColor="@android:color/holo_orange_light" />
-    </LinearLayout>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal">
-
-        <Button
-                android:id="@+id/quatroBt"
-                style="@style/CalcButton"
-                android:onClick="onClickBtNum"
-                android:text="@string/quatro" />
-
-        <Button
-                android:id="@+id/cindoBt"
-                style="@style/CalcButton"
-                android:onClick="onClickBtNum"
-                android:text="@string/cinco" />
-
-        <Button
-                android:id="@+id/seisBt"
-                style="@style/CalcButton"
-                android:onClick="onClickBtNum"
-                android:text="@string/seis" />
-
-        <Button
-                android:id="@+id/subtracaoBt"
-                style="@style/CalcButton"
-                android:onClick="onClickBtSub"
-                android:text="@string/subtracao"
-                android:textColor="@android:color/holo_orange_light" />
-    </LinearLayout>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal">
-
-        <Button
-                android:id="@+id/umBt"
-                style="@style/CalcButton"
-                android:text="@string/um" />
-
-        <Button
-                android:id="@+id/doisBt"
-                style="@style/CalcButton"
-                android:text="@string/dois" />
-
-        <Button
-                android:id="@+id/tresBt"
-                style="@style/CalcButton"
-                android:text="@string/tres" />
-
-        <Button
-                android:id="@+id/multiplicacaoBt"
-                style="@style/CalcButton"
-                android:text="@string/multiplicacao"
-                android:textColor="@android:color/holo_orange_light" />
-    </LinearLayout>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal">
-
-        <Button
-                android:id="@+id/zeroBt"
-                style="@style/CalcButton"
-                android:text="@string/zero" />
-
-        <Button
-                android:id="@+id/pontoBt"
-                style="@style/CalcButton"
-                android:text="@string/ponto" />
-
-        <Button
-                android:id="@+id/resultadoBt"
-                style="@style/CalcButton"
-                android:text="@string/igual"
-                android:textColor="@android:color/holo_orange_light" />
-
-        <Button
-                android:id="@+id/divisaoBt"
-                style="@style/CalcButton"
-                android:text="@string/divisao"
-                android:textColor="@android:color/holo_orange_light" />
-    </LinearLayout>
-
+            android:layout_height="match_parent" />
 </LinearLayout>
