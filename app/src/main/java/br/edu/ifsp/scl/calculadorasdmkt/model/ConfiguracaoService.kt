@@ -31,7 +31,7 @@ class ConfiguracaoService(context: Context) {
     }
 
     fun getConfiguracao(): Configuracao {
-        val configuracaoString: sharedPreferences.getString(TAG_CONFIGURACAO, "")
+        val configuracaoString = sharedPreferences.getString(TAG_CONFIGURACAO, "")
         return  if (configuracaoString != "")
             gson.fromJson(configuracaoString, Configuracao::class.java)
         else
