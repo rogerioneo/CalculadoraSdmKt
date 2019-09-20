@@ -1,10 +1,12 @@
-package br.edu.ifsp.scl.calculadorasdmkt
+package br.edu.ifsp.scl.calculadorasdmkt.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import kotlinx.android.synthetic.main.activity_main.*
+import br.edu.ifsp.scl.calculadorasdmkt.R
+import br.edu.ifsp.scl.calculadorasdmkt.utils.Calculadora
+import br.edu.ifsp.scl.calculadorasdmkt.utils.Operador
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
