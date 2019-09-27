@@ -1,23 +1,7 @@
 <resources>
     <string name="app_name">Calculadora Sdm Kt</string>
-    <string name="zero">0</string>
-    <string name="sete">7</string>
-    <string name="oito">8</string>
-    <string name="nove">9</string>
-    <string name="adicao">+</string>
-    <string name="quatro">4</string>
-    <string name="cinco">5</string>
-    <string name="seis">6</string>
-    <string name="subtracao">-</string>
-    <string name="um">1</string>
-    <string name="dois">2</string>
-    <string name="tres">3</string>
-    <string name="multiplicacao">X</string>
-    <string name="ponto">.</string>
-    <string name="igual">=</string>
-    <string name="divisao">/</string>
-    <string name="ce">CE</string>
-    <string name="c">C</string>
-    <string name="percent">%</string>
-    <string name="raiz">R</string>
+    <string-array name="tipo_leiaute">
+        <item>Básico</item>
+        <item>Avançado</item>
+    </string-array>
 </resources>

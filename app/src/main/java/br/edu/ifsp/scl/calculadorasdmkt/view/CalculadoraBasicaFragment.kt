@@ -37,7 +37,7 @@ class CalculadoraBasicaFragment: Fragment(), View.OnClickListener {
             }
             // Ponto
             pontoBt -> {
-                if (!lcdTv.text.toString().contains(".")) {
+                if (!lcdTv.text.toString().contains(".")){
                     if (!concatenaLcd) {
                         lcdTv.text = "0"
                     }
@@ -52,10 +52,9 @@ class CalculadoraBasicaFragment: Fragment(), View.OnClickListener {
             divisaoBt -> cliqueOperador(Operador.DIVISAO)
             resultadoBt -> cliqueOperador(Operador.RESULTADO)
         }
-
     }
 
-    fun cliqueOperador(operador: Operador){
+    fun cliqueOperador(operador: Operador) {
         lcdTv.text = Calculadora.calcula(
             lcdTv.text.toString().toFloat(),
             operador
@@ -63,14 +62,14 @@ class CalculadoraBasicaFragment: Fragment(), View.OnClickListener {
         concatenaLcd = false
     }
 
-    // Método é chamado depois que a view foi criada
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         for (i in 0..(view as ViewGroup).childCount - 1) {
-            val v = view.get(i)
-            if (v is Button)
+            val v: View = view.get(i)
+            if (v is Button) {
                 v.setOnClickListener(::onClick)
+            }
         }
     }
 

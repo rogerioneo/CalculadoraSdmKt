@@ -15,5 +15,4 @@ class CalculadoraAvancadaFragment: Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_calculadora_avancada, container, false)
     }
-
 }

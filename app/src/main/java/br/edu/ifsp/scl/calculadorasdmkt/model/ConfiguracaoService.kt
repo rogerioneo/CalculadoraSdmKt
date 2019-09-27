@@ -16,9 +16,8 @@ class ConfiguracaoService(context: Context) {
 
     val sharedPreferences: SharedPreferences
     val gson: Gson
-    init {
+    init{
         sharedPreferences = context.getSharedPreferences(NOME_ARQUIVO, MODO_ARQUIVO)
-
         gson = GsonBuilder().create()
     }
 
@@ -32,7 +31,8 @@ class ConfiguracaoService(context: Context) {
 
     fun getConfiguracao(): Configuracao {
         val configuracaoString = sharedPreferences.getString(TAG_CONFIGURACAO, "")
-        return  if (configuracaoString != "")
+
+        return if (configuracaoString != "")
             gson.fromJson(configuracaoString, Configuracao::class.java)
         else
             Configuracao()
