@@ -73,6 +73,7 @@ class CalculadoraAvancadaFragment(val configuracao: Configuracao): Fragment(), V
             cBt -> cliqueOperador(Operador.C)
             ceBt -> cliqueOperador(Operador.CE)
             porcentageBt -> cliqueOperador(Operador.PORCENTO)
+            raizBt -> cliqueOperador(Operador.RAIZ)
         }
     }
 
