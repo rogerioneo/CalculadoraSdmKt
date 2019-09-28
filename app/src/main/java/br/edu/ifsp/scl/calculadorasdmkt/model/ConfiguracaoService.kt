@@ -6,8 +6,8 @@ class ConfiguracaoService(context: Context) {
     var configuracaoDao: ConfiguracaoDao
     init{
         // Inicializando conforme a fonte de dados utilizada
-        configuracaoDao = ConfiguracaoSharedPreferences(context)
-        // configuracaoDao = ConfiguracaoSqlite(context)
+        //configuracaoDao = ConfiguracaoSharedPreferences(context)
+        configuracaoDao = ConfiguracaoSqlite(context)
     }
     fun setConfiguracao(configuracao: Configuracao) {
         /* Qualquer tratamento necessário aos dados antes de salvá-los
