@@ -94,5 +94,7 @@ class CalculadoraAvancadaFragment(val configuracao: Configuracao): Fragment(), V
                 v.setOnClickListener(::onClick)
             }
         }
+        lcdTv.text = "0"
+        cliqueOperador(Operador.RESULTADO)
     }
 }

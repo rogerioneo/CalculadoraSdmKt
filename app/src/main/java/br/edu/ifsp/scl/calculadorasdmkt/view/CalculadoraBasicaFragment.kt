@@ -74,6 +74,8 @@ class CalculadoraBasicaFragment(val configuracao: Configuracao): Fragment(), Vie
                 v.setOnClickListener(::onClick)
             }
         }
+        lcdTv.text = "0"
+        cliqueOperador(Operador.RESULTADO)
     }
 
 }
