@@ -8,11 +8,14 @@ import android.widget.Button
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import br.edu.ifsp.scl.calculadorasdmkt.R
+import br.edu.ifsp.scl.calculadorasdmkt.model.Configuracao
+import br.edu.ifsp.scl.calculadorasdmkt.model.ConfiguracaoService
+import br.edu.ifsp.scl.calculadorasdmkt.model.Separador
 import br.edu.ifsp.scl.calculadorasdmkt.utils.Calculadora
 import br.edu.ifsp.scl.calculadorasdmkt.utils.Operador
 import kotlinx.android.synthetic.main.fragment_calculadora_basica.*
 
-class CalculadoraBasicaFragment: Fragment(), View.OnClickListener {
+class CalculadoraBasicaFragment(val configuracao: Configuracao): Fragment(), View.OnClickListener {
     var concatenaLcd: Boolean = true
 
     override fun onCreateView(
@@ -37,11 +40,11 @@ class CalculadoraBasicaFragment: Fragment(), View.OnClickListener {
             }
             // Ponto
             pontoBt -> {
-                if (!lcdTv.text.toString().contains(".")){
+                if (!lcdTv.text.toString().contains(configuracao.separador.text)){
                     if (!concatenaLcd) {
                         lcdTv.text = "0"
                     }
-                    lcdTv.append(".")
+                    lcdTv.append(configuracao.separador.text)
                     concatenaLcd = true
                 }
             }
@@ -56,9 +59,9 @@ class CalculadoraBasicaFragment: Fragment(), View.OnClickListener {
 
     fun cliqueOperador(operador: Operador) {
         lcdTv.text = Calculadora.calcula(
-            lcdTv.text.toString().toFloat(),
+            lcdTv.text.toString().replace(",",".").toFloat(),
             operador
-        ).toString()
+        ).toString().replace(".", configuracao.separador.text,true)
         concatenaLcd = false
     }
 

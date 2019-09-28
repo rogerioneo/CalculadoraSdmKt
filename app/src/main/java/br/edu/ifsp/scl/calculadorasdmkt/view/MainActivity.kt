@@ -28,12 +28,12 @@ class MainActivity : AppCompatActivity() {
     private fun atualizaView(configuracao: Configuracao){
         if (configuracao.leiauteAvancado) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.calculadoraFl, CalculadoraAvancadaFragment())
+                .replace(R.id.calculadoraFl, CalculadoraAvancadaFragment(configuracao))
                 .commit()
         }
         else {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.calculadoraFl, CalculadoraBasicaFragment())
+                .replace(R.id.calculadoraFl, CalculadoraBasicaFragment(configuracao))
                 .commit()
         }
     }
