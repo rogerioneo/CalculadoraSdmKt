@@ -19,6 +19,30 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
+            android:id="@+id/linearLayoutBd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+        <TextView
+                android:id="@+id/textViewBd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tipo de armazenamento" />
+        <Spinner
+                android:id="@+id/armazenamentoSpn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/armazenamento"
+                android:textAlignment="viewEnd" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +50,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutBd">
         <TextView
             android:id="@+id/textView"
             android:layout_width="0dp"

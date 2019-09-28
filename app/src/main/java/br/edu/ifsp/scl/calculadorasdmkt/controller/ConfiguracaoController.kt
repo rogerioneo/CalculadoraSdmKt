@@ -11,13 +11,13 @@ class ConfiguracaoController(val view: ConfiguracaoActivity) {
         model = ConfiguracaoService(view.applicationContext)
     }
 
-    fun salvaConfiguracao(configuracao: Configuracao) {
-        model.setConfiguracao(configuracao)
-        view.atualizaView(configuracao)
+    fun salvaConfiguracao(usarSqlite: Boolean, configuracao: Configuracao) {
+        model.setConfiguracao(usarSqlite, configuracao)
+        view.atualizaView(usarSqlite, configuracao)
     }
 
     fun buscaConfiguracao() {
         val configuracao = model.getConfiguracao()
-        view.atualizaView(configuracao)
+        view.atualizaView(model.getUsaSqlite(), configuracao)
     }
 }

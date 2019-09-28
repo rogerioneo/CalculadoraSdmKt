@@ -1,6 +1,5 @@
 package br.edu.ifsp.scl.calculadorasdmkt.view
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -8,6 +7,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.scl.calculadorasdmkt.R
 import br.edu.ifsp.scl.calculadorasdmkt.model.Configuracao
+import br.edu.ifsp.scl.calculadorasdmkt.model.ConfiguracaoService
 import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,10 +19,23 @@ class MainActivity : AppCompatActivity() {
         toolbar.title = getString(R.string.app_name)
         setSupportActionBar(toolbar)
 
-        // Fragment padrão
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.calculadoraFl, CalculadoraBasicaFragment())
-            .commit()
+        val configuracaoService = ConfiguracaoService(applicationContext)
+
+        val configuracao: Configuracao = configuracaoService.getConfiguracao()
+        atualizaView(configuracao)
+    }
+
+    private fun atualizaView(configuracao: Configuracao){
+        if (configuracao.leiauteAvancado) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.calculadoraFl, CalculadoraAvancadaFragment())
+                .commit()
+        }
+        else {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.calculadoraFl, CalculadoraBasicaFragment())
+                .commit()
+        }
     }
 
     // Cria o menu
@@ -63,16 +76,7 @@ class MainActivity : AppCompatActivity() {
             val configuracao = data?.getParcelableExtra<Configuracao>(
                 ConfiguracaoActivity.Constantes.CONFIGURACAO)
 
-            if (configuracao!!.leiauteAvancado) {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.calculadoraFl, CalculadoraAvancadaFragment())
-                    .commit()
-            }
-            else {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.calculadoraFl, CalculadoraBasicaFragment())
-                    .commit()
-            }
+            atualizaView(configuracao!!)
         }
 
     }

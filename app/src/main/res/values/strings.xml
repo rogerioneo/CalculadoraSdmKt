@@ -4,4 +4,8 @@
         <item>Básico</item>
         <item>Avançado</item>
     </string-array>
+    <string-array name="armazenamento">
+        <item>Shared Preferences</item>
+        <item>Sqlite</item>
+    </string-array>
 </resources>

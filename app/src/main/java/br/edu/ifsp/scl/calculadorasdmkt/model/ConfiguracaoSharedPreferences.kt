@@ -18,7 +18,7 @@ class ConfiguracaoSharedPreferences(contexto: Context): ConfiguracaoDao {
     val gson: Gson
     init {
         sharedPreferences = contexto.getSharedPreferences(NOME_ARQUIVO,
-                                                            MODO_ARQUIVO)
+            MODO_ARQUIVO)
         gson = GsonBuilder().create()
     }
 
@@ -34,8 +34,8 @@ class ConfiguracaoSharedPreferences(contexto: Context): ConfiguracaoDao {
     override fun readConfiguracao(): Configuracao {
         val configuracaoString = sharedPreferences.getString(TAG_CONFIGURACAO, "")
         return if (configuracaoString != "")
-                    gson.fromJson(configuracaoString, Configuracao::class.java)
-                else
-                    Configuracao()
+            gson.fromJson(configuracaoString, Configuracao::class.java)
+        else
+            Configuracao()
     }
 }

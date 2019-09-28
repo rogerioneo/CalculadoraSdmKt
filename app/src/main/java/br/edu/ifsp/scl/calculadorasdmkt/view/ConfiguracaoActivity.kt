@@ -35,9 +35,9 @@ class ConfiguracaoActivity: AppCompatActivity() {
     }
 
     // Função chamada pelo Controller depois de acessar o Model
-    fun atualizaView(configuracao: Configuracao) {
+    fun atualizaView(usarSqlite: Boolean, configuracao: Configuracao) {
         // Ajusta o leiaute conforme a configuração
-
+        armazenamentoSpn.setSelection(if (usarSqlite) 1 else 0 )
         leiauteSpn.setSelection( if (configuracao.leiauteAvancado) 1 else 0 )
         separadorRg.check(
             if (configuracao.separador == Separador.PONTO)
@@ -51,8 +51,9 @@ class ConfiguracaoActivity: AppCompatActivity() {
             putExtra(Constantes.CONFIGURACAO, configuracao))
     }
 
-    fun onClickSalvaConfiguracao(v: View) {
+    fun onClickSalvaConfiguracao(@Suppress("UNUSED_PARAMETER") v: View) {
         // Pega os dados da tela
+        val usarSqlite = armazenamentoSpn.selectedItemPosition == 1
         val leiauteAvancado = leiauteSpn.selectedItemPosition == 1
         val separador = if (pontoRb.isChecked) Separador.PONTO else Separador.VIRGULA
 
@@ -60,9 +61,12 @@ class ConfiguracaoActivity: AppCompatActivity() {
         val novaConfiguracao: Configuracao = Configuracao(leiauteAvancado, separador)
 
         // Chamar o Controller para salvar
-        configuracaoController.salvaConfiguracao(novaConfiguracao)
+        configuracaoController.salvaConfiguracao(usarSqlite, novaConfiguracao)
 
-        Toast.makeText(this, "Configuração salva!", Toast.LENGTH_SHORT).show()
+        if (usarSqlite)
+            Toast.makeText(this, "Configuração salva no Sqlite!", Toast.LENGTH_SHORT).show()
+        else
+            Toast.makeText(this, "Configuração salva no SharedPreference!", Toast.LENGTH_SHORT).show()
 
         this.onBackPressed()
     }
